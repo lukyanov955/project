@@ -6,9 +6,6 @@ try {
     $stmt = $pdo->query("SELECT title, image_url, link_url FROM tiles");
     $tiles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // Количество плиток
-    $tileCount = count($tiles);
-
     // Генерация плиток
     foreach ($tiles as $row) {
         echo "<div class='tile' style='background-image: url(" . htmlspecialchars($row['image_url']) . ");'>";
@@ -19,7 +16,7 @@ try {
     }
     
     // Передача количества плиток в JavaScript
-    echo "<script>const tileCount = $tileCount;</script>";
+    echo "<script>const tileCount = " . count($tiles) . ";</script>";
 } catch (PDOException $e) {
     echo "Ошибка при получении данных о плитках: " . $e->getMessage();
 }

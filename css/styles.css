@@ -39,7 +39,6 @@ body {
     box-sizing: border-box;
     display: grid;
     gap: 20px;
-    overflow-y: auto; /* Прокрутка при переполнении */
     align-content: center; /* Центровка плиток по вертикали */
     justify-content: center; /* Центровка плиток по горизонтали */
     z-index: 999;
@@ -56,6 +55,7 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
     width: 100%; /* Ширина 100% от контейнера */
     aspect-ratio: 1 / 1; /* Квадратные плитки */
+    max-width: 200px; /* Ограничение максимального размера плиток */
 }
 .tile-link {
     text-decoration: none;
@@ -112,5 +112,13 @@ body {
 
 /* Ограничение максимального размера плиток */
 .tile {
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+/* Для центрирования всего содержимого tile-menu */
+.tile-menu {
+    justify-content: center;
+    align-items: center;
+    grid-auto-rows: 1fr;
+}

@@ -12,12 +12,8 @@
     </div>
 
     <div class="tile-menu" id="tileMenu">
-        <a href="#" class="tile">Ссылка 1</a>
-        <a href="#" class="tile">Ссылка 2</a>
-        <a href="#" class="tile">Ссылка 3</a>
-        <a href="#" class="tile">Ссылка 4</a>
-        <a href="#" class="tile">Ссылка 5</a>
-        <a href="#" class="tile">Ссылка 6</a>
+        <!-- Включение файла с плитками -->
+        <?php include 'tiles.php'; ?>
     </div>
 
     <div class="news-container">
